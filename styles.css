@@ -417,6 +417,9 @@ img { display: block; max-width: 100%; }
 .tool h3 { font-family: var(--font-mono); font-size: 13px; color: var(--lime); text-transform: uppercase; letter-spacing: .07em; margin-bottom: 10px; font-weight: 600; }
 .tool p { font-size: 15px; line-height: 1.75; }
 .certs { display: flex; flex-wrap: wrap; gap: 12px 28px; margin-top: 22px; font-size: 14px; color: var(--muted); }
+.certs a { text-decoration: none; transition: color .2s; }
+.certs a:hover { color: var(--chalk); }
+.certs__verify { color: var(--lime); font-weight: 600; margin-left: 4px; }
 
 /* ---------- BEYOND WORK ---------- */
 .gallery {
