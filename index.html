@@ -1,0 +1,422 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ebna Sina · Data Scientist in Berlin</title>
+  <meta name="description" content="Ebna Sina: MSc Data Science student in Berlin and working student at Paul-Drude-Institut. I build LLM systems, recommenders and research data infrastructure." />
+  <meta name="author" content="Ebna Sina" />
+  <meta property="og:title" content="Ebna Sina · Data Scientist in Berlin" />
+  <meta property="og:description" content="Building data products people actually use: LLM systems, recommenders and research data platforms." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://sina-778.github.io/" />
+  <meta property="og:image" content="https://sina-778.github.io/assets/images/og-image.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="theme-color" content="#0b0c0f" />
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=JetBrains+Mono:wght@400;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <a href="#about" class="skip">Skip to content</a>
+
+  <!-- ============ NAV ============ -->
+  <header class="nav" id="nav">
+    <a href="#top" class="nav__logo" aria-label="Back to top">ES<span>.</span></a>
+    <button class="nav__toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks">
+      <span></span><span></span>
+    </button>
+    <nav class="nav__links" id="navLinks" aria-label="Main">
+      <a href="#about">About</a>
+      <a href="#experience">Experience</a>
+      <a href="#projects">Projects</a>
+      <a href="#research">Research</a>
+      <a href="#skills">Skills</a>
+      <a href="#beyond">Beyond work</a>
+      <a href="#contact" class="nav__cta">Contact</a>
+    </nav>
+  </header>
+
+  <main id="top">
+
+    <!-- ============ HERO ============ -->
+    <section class="hero">
+      <!-- A drifting data graph. (Look closely at how the nodes are arranged.) -->
+      <canvas id="graph" aria-hidden="true"></canvas>
+      <div class="hero__inner">
+        <p class="kicker"><span class="dot"></span> Data Scientist · Berlin</p>
+        <h1 class="hero__title">Ebna Sina</h1>
+        <p class="hero__lead">
+          I build data products people actually use:
+          <em>research data platforms</em> for scientists, <em>LLM pipelines</em> that answer fast,
+          and <em>recommenders</em> that explain themselves.
+        </p>
+        <div class="hero__actions">
+          <a href="#projects" class="btn btn--primary">See my work</a>
+          <a href="#contact" class="btn btn--ghost">Get in touch</a>
+          <!-- Add your CV as assets/Ebna_Sina_CV.pdf, then uncomment: -->
+          <!-- <a href="assets/Ebna_Sina_CV.pdf" class="btn btn--ghost" download>Download CV ↓</a> -->
+        </div>
+        <ul class="hero__stats">
+          <li><strong>MSc</strong><span>Data Science @ BHT Berlin</span></li>
+          <li><strong>3+ yrs</strong><span>industry &amp; research</span></li>
+          <li><strong>20–30×</strong><span>faster LLM routing</span></li>
+        </ul>
+      </div>
+      <a href="#about" class="hero__scroll" aria-label="Scroll down">scroll <span>↓</span></a>
+    </section>
+
+    <!-- ============ ABOUT ============ -->
+    <section class="section" id="about">
+      <div class="section__head reveal">
+        <span class="section__num">01</span>
+        <h2>About</h2>
+      </div>
+
+      <div class="about">
+        <div class="about__text reveal">
+          <p class="big">
+            Hi, I'm Sina. I grew up in Bangladesh, wrote ERP software in Dhaka, did machine learning research at university, and moved to Berlin to study data science.
+          </p>
+          <p>
+            Today I'm doing my <strong>MSc in Data Science at Berliner Hochschule für Technik</strong> and work as a <strong>working student at the Paul-Drude-Institut</strong>, where I run the institute's research data platform.
+          </p>
+          <p>
+            I like problems that sit between models and real users: making a recommender explain itself, getting an LLM pipeline to answer fast, or helping scientists actually find their own data. I care about the whole play, from raw data to the person using the result.
+          </p>
+          <p class="about__now">
+            <span class="about__now-label">Now</span>
+            Reproducing LoRA for Advanced ML, and looking for a <strong>working-student role or thesis topic</strong> in ML / LLMs.
+          </p>
+        </div>
+
+        <aside class="profile reveal" aria-label="At a glance">
+          <div class="profile__photo">
+            <img src="assets/images/portrait.jpg" alt="Portrait of Ebna Sina, smiling" width="933" height="1400" loading="lazy" />
+          </div>
+          <div class="profile__body">
+            <p class="profile__label">At a glance</p>
+            <dl class="profile__grid">
+              <div><dt>Role</dt><dd>Data Scientist / ML</dd></div>
+              <div><dt>Based in</dt><dd>Berlin, DE</dd></div>
+              <div><dt>Currently</dt><dd>Paul-Drude-Institut</dd></div>
+              <div><dt>Studying</dt><dd>MSc Data Science, BHT</dd></div>
+              <div><dt>Languages</dt><dd>Bangla · English · Deutsch (learning)</dd></div>
+              <div><dt>Off the clock</dt><dd>Five-a-side, travel</dd></div>
+            </dl>
+            <div class="profile__traits">
+              <span>Recommender systems</span>
+              <span>LLM routing</span>
+              <span>Computer vision</span>
+              <span>Data infrastructure</span>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- ============ EXPERIENCE ============ -->
+    <section class="section" id="experience">
+      <div class="section__head reveal">
+        <span class="section__num">02</span>
+        <h2>Experience &amp; education</h2>
+      </div>
+
+      <ol class="journey">
+        <li class="stop reveal">
+          <div class="stop__marker"><span>🇧🇩</span></div>
+          <div class="stop__place">Thakurgaon</div>
+          <div class="stop__items">
+            <article>
+              <time>2010 – 2014</time>
+              <h3>School &amp; Higher Secondary (Science)</h3>
+              <p>Thakurgaon Sugar Mills High School · Thakurgaon Government College. SSC GPA 5.00/5.00.</p>
+            </article>
+          </div>
+        </li>
+
+        <li class="stop reveal">
+          <div class="stop__marker"><span>🏙️</span></div>
+          <div class="stop__place">Dhaka</div>
+          <div class="stop__items">
+            <article>
+              <time>2016 – 2020</time>
+              <h3>BSc Computer Science &amp; Engineering</h3>
+              <p>United International University. CGPA 3.77/4.00, tuition scholarship (50–100% waiver). Thesis: Bengali conversational question answering.</p>
+            </article>
+            <article>
+              <time>2021 – 2024</time>
+              <h3>Software Engineer · United Group</h3>
+              <p>Built data visualization dashboards and analyzed business data across full-cycle ERP modules: production, sales, inventory, finance, SCM, HR &amp; payroll.</p>
+            </article>
+            <article>
+              <time>2023 – 2024</time>
+              <h3>Research Assistant · UIU</h3>
+              <p>Machine learning and computer vision research, including real-time vehicle detection on Bangladeshi roads.</p>
+            </article>
+          </div>
+        </li>
+
+        <li class="stop stop--now reveal">
+          <div class="stop__marker"><span>🇩🇪</span></div>
+          <div class="stop__place">Berlin <em>now</em></div>
+          <div class="stop__items">
+            <article>
+              <time>2024 – present</time>
+              <h3>MSc Data Science · BHT</h3>
+              <p>Berliner Hochschule für Technik. Recommender systems, deep learning, LLMs.</p>
+            </article>
+            <article>
+              <time>present</time>
+              <h3>Working Student · Paul-Drude-Institut</h3>
+              <p>Research data management: running the institute's NOMAD Oasis, extending its plugin, and contributing upstream to FAIRmat.</p>
+            </article>
+          </div>
+        </li>
+      </ol>
+    </section>
+
+    <!-- ============ PROJECTS ============ -->
+    <section class="section" id="projects">
+      <div class="section__head reveal">
+        <span class="section__num">03</span>
+        <h2>Selected work</h2>
+      </div>
+
+      <!-- Featured: FootScout -->
+      <article class="feature reveal">
+        <div class="feature__media" aria-hidden="true">
+          <!-- Stylised player-comparison radar. Swap for a real screenshot anytime:
+               <img src="assets/images/footscout.png" alt="FootScout app screenshot" /> -->
+          <svg class="radar" viewBox="0 0 320 320">
+            <g class="radar__grid">
+              <polygon points="160,40 264,100 264,220 160,280 56,220 56,100" />
+              <polygon points="160,80 229,120 229,200 160,240 91,200 91,120" />
+              <polygon points="160,120 195,140 195,180 160,200 125,180 125,140" />
+              <line x1="160" y1="160" x2="160" y2="40" /><line x1="160" y1="160" x2="264" y2="100" />
+              <line x1="160" y1="160" x2="264" y2="220" /><line x1="160" y1="160" x2="160" y2="280" />
+              <line x1="160" y1="160" x2="56" y2="220" /><line x1="160" y1="160" x2="56" y2="100" />
+            </g>
+            <polygon class="radar__b" points="160,70 236,116 222,196 160,252 98,196 84,116" />
+            <polygon class="radar__a" points="160,52 250,108 240,206 160,232 110,189 70,108" />
+            <g class="radar__labels">
+              <text x="160" y="28">Finishing</text>
+              <text x="282" y="96" text-anchor="start">Pace</text>
+              <text x="282" y="232" text-anchor="start">Passing</text>
+              <text x="160" y="302">Defending</text>
+              <text x="38" y="232" text-anchor="end">Pressing</text>
+              <text x="38" y="96" text-anchor="end">Dribbling</text>
+            </g>
+          </svg>
+          <p class="radar__legend"><span class="a"></span>Query &nbsp; <span class="b"></span>Best match · 0.94</p>
+        </div>
+        <div class="feature__body">
+          <p class="tag">Featured · MSc project · Recommender system</p>
+          <h3>FootScout</h3>
+          <p class="feature__quote">"Find me a striker like Haaland under €80M."</p>
+          <p>A natural-language recommender for football scouting. Describe the profile you need in plain words; it retrieves matching players, explains <em>why</em> they match, and compares them on radar charts.</p>
+          <ul class="facts">
+            <li><strong>1,474</strong> players · 5 leagues + World Cup 2026</li>
+            <li><strong>416-dim</strong> hybrid embeddings: per-90 stats + Sentence-BERT</li>
+            <li><strong>Budget Scout</strong> &amp; <strong>Hidden Gems</strong> modes</li>
+            <li>Tuned with Optuna, tracked in Weights &amp; Biases</li>
+          </ul>
+          <div class="chips"><span>Python</span><span>Streamlit</span><span>Sentence-BERT</span><span>Optuna</span></div>
+          <div class="links">
+            <a href="https://footscout.streamlit.app/" class="btn btn--primary" target="_blank" rel="noopener">Live demo ↗</a>
+            <a href="https://github.com/sina-778/footscout" class="btn btn--ghost" target="_blank" rel="noopener">Code</a>
+          </div>
+        </div>
+      </article>
+
+      <div class="cards">
+        <article class="card reveal">
+          <p class="tag">LLM systems</p>
+          <h3>Hybrid Brain</h3>
+          <p>System 1 routes, System 2 answers. A small, fast decision model scores each task with probabilities and routes it to specialist LLMs on the GWDG supercomputer, escalating hard cases to a 675B model.</p>
+          <ul class="facts">
+            <li>Typically <strong>20–30× faster</strong> than an LLM-as-router</li>
+            <li>Never returns broken JSON</li>
+            <li>Runs via API or fully local on llama.cpp</li>
+          </ul>
+          <div class="chips"><span>Python</span><span>llama.cpp</span><span>Streamlit</span></div>
+          <a href="https://github.com/sina-778/system1-demo" class="card__link" target="_blank" rel="noopener">View code ↗</a>
+        </article>
+
+        <article class="card reveal">
+          <p class="tag">Work · PDI Berlin</p>
+          <h3>NOMAD Oasis</h3>
+          <p>I maintain the institute's self-hosted <a href="https://nomad-lab.eu/" target="_blank" rel="noopener">NOMAD Oasis</a>, where materials scientists store, search and share research data.</p>
+          <ul class="facts">
+            <li>Plugin schemas, normalizers &amp; search apps for MBE growth and samples</li>
+            <li>Upstream contributions to FAIRmat</li>
+            <li>HTTPS, Docker, Grafana/Prometheus monitoring, CI</li>
+          </ul>
+          <div class="chips"><span>Python</span><span>Docker</span><span>Nginx</span><span>Grafana</span></div>
+        </article>
+
+        <article class="card reveal">
+          <p class="tag">Data analysis</p>
+          <h3>Stock vs. Revenue Dashboards</h3>
+          <p>Tesla and GameStop share prices (yfinance) against scraped quarterly revenue. Shows GameStop's 2021 price spike happening while revenue was falling.</p>
+          <div class="chips"><span>pandas</span><span>BeautifulSoup</span><span>Plotly</span></div>
+          <a href="https://github.com/sina-778/ExtractingandVisualizingStockData" class="card__link" target="_blank" rel="noopener">View code ↗</a>
+        </article>
+
+        <article class="card reveal">
+          <p class="tag">Earlier · UIU</p>
+          <h3>AI Load Forecasting</h3>
+          <p>A prototype that forecasts electrical load with machine learning, from data analysis to predictions.</p>
+          <div class="chips"><span>Python</span><span>scikit-learn</span></div>
+        </article>
+
+        <article class="card reveal">
+          <p class="tag">Earlier · Web</p>
+          <h3>Web apps</h3>
+          <p>Student Management System (Spring Boot + Angular), Free Time Tutoring and Food &amp; Foodies (PHP/JS). Where I learned to build for real users.</p>
+          <div class="chips"><span>Java</span><span>Spring Boot</span><span>PHP</span><span>JS</span></div>
+          <a href="https://github.com/sina-778/Student_Management_System" class="card__link" target="_blank" rel="noopener">View code ↗</a>
+        </article>
+      </div>
+    </section>
+
+    <!-- ============ RESEARCH ============ -->
+    <section class="section" id="research">
+      <div class="section__head reveal">
+        <span class="section__num">04</span>
+        <h2>Research</h2>
+      </div>
+
+      <div class="papers">
+        <article class="paper reveal">
+          <div class="paper__meta">
+            <!-- TODO: replace "Publication" with the venue + year once confirmed -->
+            <span class="badge">Publication</span>
+            <span>Co-author · Computer vision</span>
+          </div>
+          <h3>Bangladeshi Vehicle Classification and Detection using Deep Convolutional Neural Networks with Transfer Learning</h3>
+          <p>A real-time system that detects and classifies the many vehicle types on Bangladeshi roads, alongside a large-scale effort to collect a dataset covering all of them.</p>
+          <a href="https://www.researchgate.net/publication/388811922_Bangladeshi_Vehicle_Classification_and_Detection_using_Deep_Convolutional_Neural_Networks_with_Transfer_Learning" class="card__link" target="_blank" rel="noopener">Read the paper ↗</a>
+        </article>
+
+        <article class="paper reveal">
+          <div class="paper__meta">
+            <span class="badge badge--soft">BSc thesis</span>
+            <span>NLP · Bengali</span>
+          </div>
+          <h3>Bengali Conversational Question Answering System using Machine Learning</h3>
+          <p>A Bi-LSTM model that answers questions in Bengali with rationale-driven responses, aiming at natural human–machine conversation in a low-resource language.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- ============ SKILLS ============ -->
+    <section class="section" id="skills">
+      <div class="section__head reveal">
+        <span class="section__num">05</span>
+        <h2>Skills</h2>
+      </div>
+
+      <div class="toolkit">
+        <div class="tool reveal">
+          <h3>Machine learning</h3>
+          <p>Python · PyTorch · scikit-learn · TensorFlow / Keras · Sentence-BERT · Optuna · Weights &amp; Biases</p>
+        </div>
+        <div class="tool reveal">
+          <h3>LLMs</h3>
+          <p>llama.cpp · Hugging Face · LoRA · LLM routing &amp; evaluation</p>
+        </div>
+        <div class="tool reveal">
+          <h3>Data</h3>
+          <p>pandas · NumPy · PySpark · SQL (PostgreSQL, MySQL, MS SQL) · MongoDB · web scraping</p>
+        </div>
+        <div class="tool reveal">
+          <h3>Infra &amp; DevOps</h3>
+          <p>Docker · Nginx · Linux · GitHub Actions · Grafana · Prometheus</p>
+        </div>
+        <div class="tool reveal">
+          <h3>Visualization</h3>
+          <p>Streamlit · Plotly · Matplotlib · Seaborn · Tableau</p>
+        </div>
+        <div class="tool reveal">
+          <h3>Also speaks</h3>
+          <p>Java · C/C++ · R · JavaScript · HTML/CSS · LaTeX</p>
+        </div>
+      </div>
+
+      <div class="certs reveal">
+        <span>🎓 IBM Data Science Professional Certificate · 2024</span>
+        <span>🎓 Google Data Analytics Professional Certificate · 2023</span>
+      </div>
+    </section>
+
+    <!-- ============ BEYOND WORK ============ -->
+    <section class="section" id="beyond">
+      <div class="section__head reveal">
+        <span class="section__num">06</span>
+        <h2>Beyond work</h2>
+      </div>
+
+      <div class="gallery reveal">
+        <figure>
+          <img src="assets/images/berlin.jpg" alt="Sina in front of the Brandenburg Gate in Berlin" width="825" height="1100" loading="lazy" />
+          <figcaption>Berlin, home since 2024</figcaption>
+        </figure>
+        <figure class="gallery__wide">
+          <img src="assets/images/five-a-side.jpg" alt="Sina striking a ball during an evening five-a-side game" width="795" height="532" loading="lazy" />
+          <figcaption>Weeknight five-a-side, where some of my best ideas start</figcaption>
+        </figure>
+        <figure>
+          <img src="assets/images/sunset.jpg" alt="Sina sitting on a viewpoint above hills at sunset" width="825" height="1100" loading="lazy" />
+          <figcaption>Weekends are for getting a little lost</figcaption>
+        </figure>
+      </div>
+
+      <ul class="highlights">
+        <li class="reveal">
+          <span class="hl__icon">🧭</span>
+          <div><h3>Captain, UIU CSE football team</h3><p>2018 – 2019. Still playing in corporate tournaments.</p></div>
+        </li>
+        <li class="reveal">
+          <span class="hl__icon">💻</span>
+          <div><h3>Vice President, UIU Computer Club</h3><p>2019 – 2020, after two years as treasurer.</p></div>
+        </li>
+        <li class="reveal">
+          <span class="hl__icon">🏆</span>
+          <div><h3>1st runner-up, Software Project Show</h3><p>UIU, Fall 2019. Also 1st runner-up at the Electronics Project Show, Fall 2017.</p></div>
+        </li>
+        <li class="reveal">
+          <span class="hl__icon">🤝</span>
+          <div><h3>Volunteer</h3><p>ICCIT conference (2018) and the IBRO-APRC School of Neuroscience (2019).</p></div>
+        </li>
+      </ul>
+    </section>
+
+    <!-- ============ CONTACT ============ -->
+    <section class="section contact" id="contact">
+      <div class="contact__inner reveal">
+        <p class="kicker"><span class="dot"></span> Open to working-student roles &amp; thesis topics</p>
+        <h2 class="contact__title">Let's build<br/>something useful.</h2>
+        <p class="contact__sub">Data, LLMs, research infrastructure, or last night's match. My inbox is open.</p>
+        <a href="mailto:ebnasina7@gmail.com" class="contact__mail">ebnasina7@gmail.com</a>
+        <div class="contact__links">
+          <a href="https://www.linkedin.com/in/ebna-sina/" target="_blank" rel="noopener">LinkedIn ↗</a>
+          <a href="https://github.com/sina-778" target="_blank" rel="noopener">GitHub ↗</a>
+          <!-- Uncomment once you add your CV as assets/Ebna_Sina_CV.pdf -->
+          <!-- <a href="assets/Ebna_Sina_CV.pdf" target="_blank">CV ↗</a> -->
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>© <span id="year"></span> Ebna Sina · Designed &amp; built in Berlin</p>
+    <a href="#top">Back to top ↑</a>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
