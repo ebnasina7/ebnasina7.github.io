@@ -40,7 +40,5 @@ publish directory `/`. You get a free `*.netlify.app` / `*.pages.dev` URL.
 
 ## To-do before sharing
 
-- [ ] Confirm the research paper venue + year (Research section, `TODO` in index.html)
-- [ ] Check the email address in the Contact section
 - [ ] Add your CV as `assets/Ebna_Sina_CV.pdf` and uncomment the two CV links
 - [ ] If not hosting at sina-778.github.io, update `og:url` / `og:image` in index.html
