@@ -3,3 +3,6 @@
 # Original full-size photos stay local (large files + EXIF/GPS data).
 # Optimized copies used by the site live in assets/images/.
 photos/
+
+# Personal exports (contain address/phone) — never publish
+Profile.pdf
