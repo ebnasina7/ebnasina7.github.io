@@ -30,7 +30,7 @@ file names in `assets/images/` or update the `src` in `index.html`.
 ## Publish
 
 ### Option A — GitHub Pages (free needs a public repo)
-Repo named **`sina-778.github.io`** → live at **https://sina-778.github.io**.
+Repo named **`ebnasina7.github.io`** → live at **https://ebnasina7.github.io**.
 Settings → Pages → Source: Deploy from a branch → `main` / `(root)`.
 GitHub Pages from a *private* repo requires a paid GitHub plan (Pro).
 
@@ -41,4 +41,3 @@ publish directory `/`. You get a free `*.netlify.app` / `*.pages.dev` URL.
 ## To-do before sharing
 
 - [ ] Add your CV as `assets/Ebna_Sina_CV.pdf` and uncomment the two CV links
-- [ ] If not hosting at sina-778.github.io, update `og:url` / `og:image` in index.html
