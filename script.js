@@ -218,3 +218,164 @@ document.querySelectorAll(".card").forEach((card) => {
   resize();
   requestAnimationFrame(frame);
 })();
+
+/* ---------- FootScout mini game: real neighbours from next/tools/build_scout.py ---------- */
+(function scoutGame() {
+  const START = ["Lionel Messi", "Kylian Mbappé", "Harry Kane", "Kevin De Bruyne", "Lamine Yamal", "Luka Modrić", "Virgil van Dijk"];
+  const $ = (id) => document.getElementById(id);
+  fetch("assets/data/scout.json").then((r) => r.json()).then(({ players }) => {
+    const byName = new Map(players.map((p, i) => [p.n, i]));
+    const queue = START.filter((n) => byName.has(n)).map((n) => byName.get(n));
+    const shuffle = (a) => a.map((v) => [Math.random(), v]).sort((x, y) => x[0] - y[0]).map((x) => x[1]);
+    let turn = 0;
+
+    function pitch(svg, p, colour) {
+      let s = "";
+      [...p.h].forEach((d, k) => {
+        if (d !== "0") s += `<rect x="${(k % 12) * 10}" y="${Math.floor(k / 12) * 10}" width="10" height="10" fill="${colour}" opacity="${(+d / 10 + 0.06).toFixed(2)}"/>`;
+      });
+      svg.innerHTML = s + '<rect class="l" x=".5" y=".5" width="119" height="79"/><line x1="60" y1="0" x2="60" y2="80"/><circle cx="60" cy="40" r="10"/><rect class="l" x=".5" y="18" width="18" height="44"/><rect class="l" x="101.5" y="18" width="18" height="44"/>';
+      svg.setAttribute("aria-label", `Where ${p.n} touches the ball most`);
+    }
+
+    function ask() {
+      const i = queue[turn], p = players[i], top = p.s[0][0];
+      const near = new Set(p.s.map(([j]) => j).concat(i));
+      const decoys = shuffle(players.map((_, j) => j).filter((j) => players[j].p === p.p && players[j].f && !near.has(j))).slice(0, 2);
+      $("qName").textContent = p.n;
+      $("answer").hidden = true;
+      const box = $("opts");
+      box.innerHTML = "";
+      shuffle([top, ...decoys]).forEach((j) => {
+        const b = document.createElement("button");
+        b.type = "button"; b.className = "scout__opt"; b.textContent = players[j].n;
+        if (j === top) b.dataset.top = "1";
+        b.addEventListener("click", () => {
+          box.querySelectorAll(".scout__opt").forEach((x) => { x.disabled = true; x.classList.toggle("is-model", !!x.dataset.top); });
+          $("verdict").textContent = j === top ? `Same as the model: ${players[top].n}.` : `The model picked ${players[top].n}.`;
+          pitch($("pitchA"), p, "#c8f560"); $("nameA").textContent = p.n;
+          pitch($("pitchB"), players[top], "#5ab4c9"); $("nameB").textContent = players[top].n;
+          $("answer").hidden = false;
+        });
+        box.appendChild(b);
+      });
+    }
+
+    $("nextPlayer").addEventListener("click", () => { turn = (turn + 1) % queue.length; ask(); });
+    ask();
+    $("scout").hidden = false;
+  }).catch(() => {});
+})();
+
+/* ---------- Photo stories: nothing loads until someone opens one ---------- */
+(function photoStories() {
+  const BASE = "assets/images/stories/";
+  const STORIES = {
+    football: ["Football", [
+      ["frankfurt-bus", "On the bus to Frankfurt, September 2026", "Selfie with teammates on a coach"],
+      ["frankfurt-team", "Frankfurt, before kick-off", "Team photo in white kits"],
+      ["frankfurt-runnersup", "Runners-up, Desh Elite Cup 2026", "Ebna Sina with a trophy and a runners-up certificate under floodlights"],
+      ["frankfurt-night", "Frankfurt, after the final", "The team on the pitch at night with a certificate"],
+      ["darmstadt-trophy", "Champions in Darmstadt, May 2026", "Three players with medals and a large trophy"],
+      ["darmstadt-selfie", "Darmstadt, medals on", "Selfie with the team wearing medals"],
+      ["darmstadt-team", "Darmstadt", "Team photo in red kits"],
+      ["berlin-number4", "Number 4, Berlin", "Ebna Sina in a white kit beside a goal"],
+      ["berlin-award", "BFBC Football Excellence Award", "A small award held up in front of a pitch"],
+    ]],
+    travel: ["Travel", [
+      ["berlin-gate", "Berlin, home since May 2025", "Ebna Sina at the Brandenburg Gate"],
+      ["potsdam", "Sanssouci, Potsdam", "Ebna Sina by the yellow palace facade"],
+      ["leipzig-scarf", "Leipzig, December 2025", "Ebna Sina in a stadium holding up a Bangladesh scarf"],
+      ["leipzig-stadium", "Leipzig, under the lights", "A floodlit stadium during a match"],
+      ["brest-harbour", "Brest, April 2026", "Ebna Sina by the harbour in a retro Germany shirt"],
+      ["brest-green", "Brest", "Ebna Sina sitting on a low wall among trees"],
+      ["bamberg-river", "Bamberg, May 2026", "The old town hall standing in the river"],
+      ["bamberg-gate", "Bamberg's old town hall", "The painted gate of the old town hall"],
+      ["barcelona-cathedral", "Barcelona, October 2026", "Ebna Sina on the steps of the cathedral"],
+      ["barcelona-fog", "Tibidabo in the fog", "The temple disappearing into fog"],
+      ["barcelona-view", "Above Barcelona", "Ebna Sina on a viewing platform over the city"],
+      ["barcelona-sunset", "Above Barcelona, at sunset", "Ebna Sina on a wall above green hills"],
+    ]],
+    before: ["Before Berlin", [
+      ["boat", "Bangladesh", "Ebna Sina on the bow of a painted wooden boat"],
+      ["waterfall", "August 2021", "Ebna Sina lying on a fallen tree by a waterfall"],
+      ["dhaka-turf", "Dhaka, October 2020", "Ebna Sina beside a floodlit pitch"],
+      ["turf-night", "December 2022", "Ebna Sina in an orange kit on a floodlit pitch"],
+      ["france-team", "", "A football team in blue kits behind a France sign"],
+      ["finals-night", "", "Several teams lined up on a floodlit pitch"],
+      ["celebration", "", "Teammates celebrating at the side of a pitch"],
+      ["reading", "", "Ebna Sina reading in front of a full bookshelf"],
+      ["balcony", "", "Ebna Sina on a balcony above city lights at night"],
+    ]],
+  };
+  const $ = (id) => document.getElementById(id);
+  const viewer = $("viewer"), bars = $("viewerBars"), img = $("viewerImg");
+  const SECONDS = 5;
+  const calm = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  let list = [], at = 0, paused = false, timer = 0;
+
+  function reset() {
+    clearTimeout(timer);
+    document.body.style.overflow = "";
+    img.removeAttribute("src");
+    bars.innerHTML = "";
+  }
+
+  function closeViewer() {
+    viewer.close();
+    reset();
+  }
+
+  function show(n) {
+    clearTimeout(timer);
+    if (n < 0) n = 0;
+    if (n >= list.length) { closeViewer(); return; }
+    at = n;
+    const [file, cap, alt] = list[at];
+    img.src = `${BASE}${file}.jpg`;
+    img.alt = alt;
+    $("viewerCap").textContent = cap;
+    [...bars.children].forEach((b, k) => {
+      const fill = b.firstElementChild;
+      fill.style.animation = "none";
+      fill.style.width = k < at ? "100%" : "0";
+      if (k === at) {
+        if (paused) { fill.style.width = "100%"; return; }
+        void fill.offsetWidth; // restart the animation
+        fill.style.animation = `viewer-fill ${SECONDS}s linear forwards`;
+      }
+    });
+    if (!paused) timer = setTimeout(() => show(at + 1), SECONDS * 1000);
+    const next = list[at + 1];
+    if (next) new Image().src = `${BASE}${next[0]}.jpg`;
+  }
+
+  function setPaused(p) {
+    paused = p;
+    $("viewerPause").textContent = p ? "Play" : "Pause";
+    $("viewerPause").setAttribute("aria-label", p ? "Play" : "Pause");
+    show(at);
+  }
+
+  function open(key) {
+    const [title, photos] = STORIES[key];
+    list = photos; paused = calm;
+    $("viewerTitle").textContent = title;
+    $("viewerPause").textContent = paused ? "Play" : "Pause";
+    bars.innerHTML = list.map(() => "<i><b></b></i>").join("");
+    document.body.style.overflow = "hidden";
+    viewer.showModal();
+    show(0);
+  }
+
+  document.querySelectorAll("[data-story]").forEach((b) => b.addEventListener("click", () => open(b.dataset.story)));
+  $("viewerNext").addEventListener("click", () => show(at + 1));
+  $("viewerPrev").addEventListener("click", () => show(at - 1));
+  $("viewerPause").addEventListener("click", () => setPaused(!paused));
+  $("viewerClose").addEventListener("click", closeViewer);
+  viewer.addEventListener("keydown", (e) => {
+    if (e.key === "ArrowRight") show(at + 1);
+    if (e.key === "ArrowLeft") show(at - 1);
+  });
+  viewer.addEventListener("close", reset);
+})();

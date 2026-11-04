@@ -7,3 +7,27 @@ photos/
 # Personal exports (contain address/phone) — never publish
 Profile.pdf
 *_Certificate.pdf
+cv/Ebna_Sina_CV_private.pdf
+research_notes/
+reports/
+
+# Original photos dropped into assets (carry EXIF/GPS) — only resized copies get published
+assets/images/IMG_*
+assets/images/*.HEIC
+assets/images/????????-????-????-????-????????????.*
+assets/images/1629379299363.jpg
+assets/images/17938*
+assets/images/2020*
+assets/images/FB_IMG_*
+assets/images/Raju_*
+linkedin/
+
+# Local drafts and sources, never published (cv/cv.html holds the phone number)
+cv/
+next/
+next2/
+improved/
+preview/
+preview-*.html
+linkedin/
+assets/images/away/
